@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contacts</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Liste des contacts</h1>
+
+<a href="/contacts/new">Ajouter un contact</a>
+
+<table>
+    <tr>
+        <th>Nom</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="contact : ${contacts}">
+        <td th:text="${contact.name}"></td>
+        <td th:text="${contact.email}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
